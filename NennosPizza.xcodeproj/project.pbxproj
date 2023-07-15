@@ -7,15 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		161C77AC2A5E812C001EBD8F /* PizzaItemCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161C77AB2A5E812C001EBD8F /* PizzaItemCellViewModel.swift */; };
+		161C77B42A5E94E7001EBD8F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 161C77B32A5E94E7001EBD8F /* Kingfisher */; };
+		163EA3EE2A60F3730028C31A /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163EA3ED2A60F3730028C31A /* CartViewModel.swift */; };
+		163EA3F12A611A050028C31A /* DrinksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163EA3F02A611A050028C31A /* DrinksListViewController.swift */; };
+		163EA3F32A611A850028C31A /* DrinkListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163EA3F22A611A850028C31A /* DrinkListViewModel.swift */; };
+		166B750B2A5DD2D600CDAAA5 /* PizzaItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166B750A2A5DD2D600CDAAA5 /* PizzaItemCell.swift */; };
+		167D43682A6259B000B62DA3 /* PizzaEngine in Frameworks */ = {isa = PBXBuildFile; productRef = 167D43672A6259B000B62DA3 /* PizzaEngine */; };
+		167D436A2A62638A00B62DA3 /* UIViewController+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167D43692A62638A00B62DA3 /* UIViewController+ClassName.swift */; };
+		167D436C2A6263C500B62DA3 /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167D436B2A6263C500B62DA3 /* ThankYouViewController.swift */; };
 		168025A22A5D28C1001F6CBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168025A12A5D28C1001F6CBB /* AppDelegate.swift */; };
 		168025A42A5D28C1001F6CBB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168025A32A5D28C1001F6CBB /* SceneDelegate.swift */; };
-		168025A62A5D28C1001F6CBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168025A52A5D28C1001F6CBB /* ViewController.swift */; };
 		168025A92A5D28C1001F6CBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 168025A72A5D28C1001F6CBB /* Main.storyboard */; };
-		168025AB2A5D28C2001F6CBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 168025AA2A5D28C2001F6CBB /* Assets.xcassets */; };
 		168025AE2A5D28C2001F6CBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 168025AC2A5D28C2001F6CBB /* LaunchScreen.storyboard */; };
 		168025B92A5D28C2001F6CBB /* NennosPizzaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168025B82A5D28C2001F6CBB /* NennosPizzaTests.swift */; };
 		168025C32A5D28C2001F6CBB /* NennosPizzaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168025C22A5D28C2001F6CBB /* NennosPizzaUITests.swift */; };
 		168025C52A5D28C2001F6CBB /* NennosPizzaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168025C42A5D28C2001F6CBB /* NennosPizzaUITestsLaunchTests.swift */; };
+		168025D52A5D35D1001F6CBB /* PizzaListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168025D42A5D35D1001F6CBB /* PizzaListViewModel.swift */; };
+		168025DD2A5DBBE0001F6CBB /* PizzaRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168025DC2A5DBBE0001F6CBB /* PizzaRepository.swift */; };
+		168025E02A5DBF35001F6CBB /* PizzaListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168025DF2A5DBF35001F6CBB /* PizzaListViewController.swift */; };
+		168025EB2A5DCB02001F6CBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 168025AA2A5D28C2001F6CBB /* Assets.xcassets */; };
+		16C403792A5F1016006FDB32 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C403782A5F1016006FDB32 /* CartItem.swift */; };
+		16C4037B2A5F10D5006FDB32 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C4037A2A5F10D5006FDB32 /* Cart.swift */; };
+		16C4037E2A5F1245006FDB32 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C4037D2A5F1245006FDB32 /* AppCoordinator.swift */; };
+		16C403802A5F1266006FDB32 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C4037F2A5F1266006FDB32 /* Coordinator.swift */; };
+		16C403832A5F129D006FDB32 /* Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C403822A5F129D006FDB32 /* Storyboardable.swift */; };
+		16C403852A5F12D6006FDB32 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C403842A5F12D6006FDB32 /* Loadable.swift */; };
+		16C403882A5F1814006FDB32 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C403872A5F1814006FDB32 /* AppConstants.swift */; };
+		16C4038E2A5F21D3006FDB32 /* PizzaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C4038D2A5F21D3006FDB32 /* PizzaDetailViewController.swift */; };
+		16C403902A5F2205006FDB32 /* PizzaDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C4038F2A5F2205006FDB32 /* PizzaDetailViewModel.swift */; };
+		16C403952A5FB07B006FDB32 /* PizzaIngredientsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C403942A5FB07B006FDB32 /* PizzaIngredientsViewModel.swift */; };
+		16C403972A5FB5B6006FDB32 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C403962A5FB5B6006FDB32 /* ItemCell.swift */; };
+		16C403992A5FBD05006FDB32 /* ItemCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C403982A5FBD05006FDB32 /* ItemCellViewModel.swift */; };
+		16C4039C2A5FC61D006FDB32 /* SwiftEntryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 16C4039B2A5FC61D006FDB32 /* SwiftEntryKit */; };
+		16C4039E2A5FCA4E006FDB32 /* MessageUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C4039D2A5FCA4E006FDB32 /* MessageUtility.swift */; };
+		16C403A12A5FD969006FDB32 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C403A02A5FD969006FDB32 /* CartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +62,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		161C77AB2A5E812C001EBD8F /* PizzaItemCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaItemCellViewModel.swift; sourceTree = "<group>"; };
+		163EA3ED2A60F3730028C31A /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		163EA3F02A611A050028C31A /* DrinksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksListViewController.swift; sourceTree = "<group>"; };
+		163EA3F22A611A850028C31A /* DrinkListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkListViewModel.swift; sourceTree = "<group>"; };
+		166B750A2A5DD2D600CDAAA5 /* PizzaItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaItemCell.swift; sourceTree = "<group>"; };
+		167D43662A62598A00B62DA3 /* PizzaEngine */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = PizzaEngine; path = ../../PizzaEngine; sourceTree = "<group>"; };
+		167D43692A62638A00B62DA3 /* UIViewController+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ClassName.swift"; sourceTree = "<group>"; };
+		167D436B2A6263C500B62DA3 /* ThankYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
 		1680259E2A5D28C1001F6CBB /* NennosPizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NennosPizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		168025A12A5D28C1001F6CBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		168025A32A5D28C1001F6CBB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		168025A52A5D28C1001F6CBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		168025A82A5D28C1001F6CBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		168025AA2A5D28C2001F6CBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		168025AD2A5D28C2001F6CBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +82,23 @@
 		168025BE2A5D28C2001F6CBB /* NennosPizzaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NennosPizzaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		168025C22A5D28C2001F6CBB /* NennosPizzaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NennosPizzaUITests.swift; sourceTree = "<group>"; };
 		168025C42A5D28C2001F6CBB /* NennosPizzaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NennosPizzaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		168025D42A5D35D1001F6CBB /* PizzaListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaListViewModel.swift; sourceTree = "<group>"; };
+		168025DC2A5DBBE0001F6CBB /* PizzaRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaRepository.swift; sourceTree = "<group>"; };
+		168025DF2A5DBF35001F6CBB /* PizzaListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaListViewController.swift; sourceTree = "<group>"; };
+		16C403782A5F1016006FDB32 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
+		16C4037A2A5F10D5006FDB32 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		16C4037D2A5F1245006FDB32 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		16C4037F2A5F1266006FDB32 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		16C403822A5F129D006FDB32 /* Storyboardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboardable.swift; sourceTree = "<group>"; };
+		16C403842A5F12D6006FDB32 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
+		16C403872A5F1814006FDB32 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		16C4038D2A5F21D3006FDB32 /* PizzaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaDetailViewController.swift; sourceTree = "<group>"; };
+		16C4038F2A5F2205006FDB32 /* PizzaDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaDetailViewModel.swift; sourceTree = "<group>"; };
+		16C403942A5FB07B006FDB32 /* PizzaIngredientsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaIngredientsViewModel.swift; sourceTree = "<group>"; };
+		16C403962A5FB5B6006FDB32 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		16C403982A5FBD05006FDB32 /* ItemCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellViewModel.swift; sourceTree = "<group>"; };
+		16C4039D2A5FCA4E006FDB32 /* MessageUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageUtility.swift; sourceTree = "<group>"; };
+		16C403A02A5FD969006FDB32 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +106,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				161C77B42A5E94E7001EBD8F /* Kingfisher in Frameworks */,
+				16C4039C2A5FC61D006FDB32 /* SwiftEntryKit in Frameworks */,
+				167D43682A6259B000B62DA3 /* PizzaEngine in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +129,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		163EA3EF2A6119EE0028C31A /* DrinksList */ = {
+			isa = PBXGroup;
+			children = (
+				163EA3F02A611A050028C31A /* DrinksListViewController.swift */,
+				163EA3F22A611A850028C31A /* DrinkListViewModel.swift */,
+			);
+			path = DrinksList;
+			sourceTree = "<group>";
+		};
+		166B75092A5DD2BC00CDAAA5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				166B750A2A5DD2D600CDAAA5 /* PizzaItemCell.swift */,
+				161C77AB2A5E812C001EBD8F /* PizzaItemCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		168025952A5D28C1001F6CBB = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +154,7 @@
 				168025B72A5D28C2001F6CBB /* NennosPizzaTests */,
 				168025C12A5D28C2001F6CBB /* NennosPizzaUITests */,
 				1680259F2A5D28C1001F6CBB /* Products */,
+				168025E32A5DC154001F6CBB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +171,24 @@
 		168025A02A5D28C1001F6CBB /* NennosPizza */ = {
 			isa = PBXGroup;
 			children = (
+				167D43662A62598A00B62DA3 /* PizzaEngine */,
+				163EA3EF2A6119EE0028C31A /* DrinksList */,
 				168025A12A5D28C1001F6CBB /* AppDelegate.swift */,
-				168025A32A5D28C1001F6CBB /* SceneDelegate.swift */,
-				168025A52A5D28C1001F6CBB /* ViewController.swift */,
-				168025A72A5D28C1001F6CBB /* Main.storyboard */,
 				168025AA2A5D28C2001F6CBB /* Assets.xcassets */,
-				168025AC2A5D28C2001F6CBB /* LaunchScreen.storyboard */,
+				16C403772A5F1005006FDB32 /* Cart */,
+				16C4039F2A5FD953006FDB32 /* CartView */,
+				16C4037C2A5F1237006FDB32 /* Coordinators */,
+				16C403892A5F1BF0006FDB32 /* Extensions */,
 				168025AF2A5D28C2001F6CBB /* Info.plist */,
+				168025AC2A5D28C2001F6CBB /* LaunchScreen.storyboard */,
+				168025A72A5D28C1001F6CBB /* Main.storyboard */,
+				16C4038C2A5F2190006FDB32 /* PizzaDetails */,
+				168025D62A5D364C001F6CBB /* PizzaList */,
+				16C403812A5F1282006FDB32 /* Protocols */,
+				168025DB2A5DBBC2001F6CBB /* Repository */,
+				168025E62A5DC796001F6CBB /* Resources */,
+				168025A32A5D28C1001F6CBB /* SceneDelegate.swift */,
+				16C403862A5F17FE006FDB32 /* Utilities */,
 			);
 			path = NennosPizza;
 			sourceTree = "<group>";
@@ -127,6 +210,112 @@
 			path = NennosPizzaUITests;
 			sourceTree = "<group>";
 		};
+		168025D62A5D364C001F6CBB /* PizzaList */ = {
+			isa = PBXGroup;
+			children = (
+				166B75092A5DD2BC00CDAAA5 /* Cell */,
+				168025D42A5D35D1001F6CBB /* PizzaListViewModel.swift */,
+				168025DF2A5DBF35001F6CBB /* PizzaListViewController.swift */,
+			);
+			path = PizzaList;
+			sourceTree = "<group>";
+		};
+		168025DB2A5DBBC2001F6CBB /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				168025DC2A5DBBE0001F6CBB /* PizzaRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		168025E32A5DC154001F6CBB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		168025E62A5DC796001F6CBB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		16C403772A5F1005006FDB32 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				16C403782A5F1016006FDB32 /* CartItem.swift */,
+				16C4037A2A5F10D5006FDB32 /* Cart.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		16C4037C2A5F1237006FDB32 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				16C4037D2A5F1245006FDB32 /* AppCoordinator.swift */,
+				16C4037F2A5F1266006FDB32 /* Coordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		16C403812A5F1282006FDB32 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				16C403822A5F129D006FDB32 /* Storyboardable.swift */,
+				16C403842A5F12D6006FDB32 /* Loadable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		16C403862A5F17FE006FDB32 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				16C403872A5F1814006FDB32 /* AppConstants.swift */,
+				16C4039D2A5FCA4E006FDB32 /* MessageUtility.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		16C403892A5F1BF0006FDB32 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				167D43692A62638A00B62DA3 /* UIViewController+ClassName.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		16C4038C2A5F2190006FDB32 /* PizzaDetails */ = {
+			isa = PBXGroup;
+			children = (
+				16C403912A5F29AC006FDB32 /* Cell */,
+				16C4038D2A5F21D3006FDB32 /* PizzaDetailViewController.swift */,
+				16C4038F2A5F2205006FDB32 /* PizzaDetailViewModel.swift */,
+				16C403942A5FB07B006FDB32 /* PizzaIngredientsViewModel.swift */,
+			);
+			path = PizzaDetails;
+			sourceTree = "<group>";
+		};
+		16C403912A5F29AC006FDB32 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				16C403962A5FB5B6006FDB32 /* ItemCell.swift */,
+				16C403982A5FBD05006FDB32 /* ItemCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		16C4039F2A5FD953006FDB32 /* CartView */ = {
+			isa = PBXGroup;
+			children = (
+				16C403A02A5FD969006FDB32 /* CartViewController.swift */,
+				163EA3ED2A60F3730028C31A /* CartViewModel.swift */,
+				167D436B2A6263C500B62DA3 /* ThankYouViewController.swift */,
+			);
+			path = CartView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +332,11 @@
 			dependencies = (
 			);
 			name = NennosPizza;
+			packageProductDependencies = (
+				161C77B32A5E94E7001EBD8F /* Kingfisher */,
+				16C4039B2A5FC61D006FDB32 /* SwiftEntryKit */,
+				167D43672A6259B000B62DA3 /* PizzaEngine */,
+			);
 			productName = NennosPizza;
 			productReference = 1680259E2A5D28C1001F6CBB /* NennosPizza.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +409,10 @@
 				Base,
 			);
 			mainGroup = 168025952A5D28C1001F6CBB;
+			packageReferences = (
+				161C77B22A5E94E7001EBD8F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				16C4039A2A5FC61D006FDB32 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */,
+			);
 			productRefGroup = 1680259F2A5D28C1001F6CBB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,7 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				168025AE2A5D28C2001F6CBB /* LaunchScreen.storyboard in Resources */,
-				168025AB2A5D28C2001F6CBB /* Assets.xcassets in Resources */,
+				168025EB2A5DCB02001F6CBB /* Assets.xcassets in Resources */,
 				168025A92A5D28C1001F6CBB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,9 +456,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				168025A62A5D28C1001F6CBB /* ViewController.swift in Sources */,
+				168025DD2A5DBBE0001F6CBB /* PizzaRepository.swift in Sources */,
+				16C4037B2A5F10D5006FDB32 /* Cart.swift in Sources */,
+				16C403972A5FB5B6006FDB32 /* ItemCell.swift in Sources */,
+				16C403902A5F2205006FDB32 /* PizzaDetailViewModel.swift in Sources */,
+				16C403952A5FB07B006FDB32 /* PizzaIngredientsViewModel.swift in Sources */,
+				16C4037E2A5F1245006FDB32 /* AppCoordinator.swift in Sources */,
+				166B750B2A5DD2D600CDAAA5 /* PizzaItemCell.swift in Sources */,
+				16C403852A5F12D6006FDB32 /* Loadable.swift in Sources */,
+				16C4039E2A5FCA4E006FDB32 /* MessageUtility.swift in Sources */,
+				16C403832A5F129D006FDB32 /* Storyboardable.swift in Sources */,
+				163EA3EE2A60F3730028C31A /* CartViewModel.swift in Sources */,
+				16C403792A5F1016006FDB32 /* CartItem.swift in Sources */,
+				161C77AC2A5E812C001EBD8F /* PizzaItemCellViewModel.swift in Sources */,
+				16C403992A5FBD05006FDB32 /* ItemCellViewModel.swift in Sources */,
+				16C403802A5F1266006FDB32 /* Coordinator.swift in Sources */,
+				168025E02A5DBF35001F6CBB /* PizzaListViewController.swift in Sources */,
+				168025D52A5D35D1001F6CBB /* PizzaListViewModel.swift in Sources */,
+				167D436A2A62638A00B62DA3 /* UIViewController+ClassName.swift in Sources */,
+				16C403A12A5FD969006FDB32 /* CartViewController.swift in Sources */,
+				163EA3F12A611A050028C31A /* DrinksListViewController.swift in Sources */,
+				163EA3F32A611A850028C31A /* DrinkListViewModel.swift in Sources */,
+				16C403882A5F1814006FDB32 /* AppConstants.swift in Sources */,
+				16C4038E2A5F21D3006FDB32 /* PizzaDetailViewController.swift in Sources */,
 				168025A22A5D28C1001F6CBB /* AppDelegate.swift in Sources */,
 				168025A42A5D28C1001F6CBB /* SceneDelegate.swift in Sources */,
+				167D436C2A6263C500B62DA3 /* ThankYouViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,7 +662,6 @@
 				INFOPLIST_FILE = NennosPizza/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -468,7 +688,6 @@
 				INFOPLIST_FILE = NennosPizza/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -596,6 +815,42 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		161C77B22A5E94E7001EBD8F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		16C4039A2A5FC61D006FDB32 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/huri000/SwiftEntryKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		161C77B32A5E94E7001EBD8F /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 161C77B22A5E94E7001EBD8F /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		167D43672A6259B000B62DA3 /* PizzaEngine */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PizzaEngine;
+		};
+		16C4039B2A5FC61D006FDB32 /* SwiftEntryKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16C4039A2A5FC61D006FDB32 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */;
+			productName = SwiftEntryKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 168025962A5D28C1001F6CBB /* Project object */;
 }
