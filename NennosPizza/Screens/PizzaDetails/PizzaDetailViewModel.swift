@@ -9,18 +9,27 @@ import Combine
 import Foundation
 import PizzaEngine
 
+// MARK: - PizzaDetailViewModelProtocol
+
+protocol PizzaDetailViewModelProtocol {
+    var ingredientsCellViewModel: [IngredientCellViewModel] { get }
+    var pizzaName: String { get }
+
+    func addPizzaToCart()
+}
+
 // MARK: - PizzaDetailViewModel
 
-class PizzaDetailViewModel {
+class PizzaDetailViewModel: PizzaDetailViewModelProtocol {
     lazy var ingredientsCellViewModel = createIngredientCellViewModels()
     lazy var pizzaName = pizzaIngredientsViewModel.pizzaViewModel.pizza.name.uppercased()
 
     let pizzaIngredientsViewModel: PizzaIngredientsViewModel
-    private let cart: Cart!
+    private let cart: CartProtocol!
 
     init(
         pizzaIngredientsViewModel: PizzaIngredientsViewModel,
-        cart: Cart
+        cart: CartProtocol
     ) {
         self.pizzaIngredientsViewModel = pizzaIngredientsViewModel
         self.cart = cart

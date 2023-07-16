@@ -9,33 +9,46 @@ import Combine
 import Foundation
 import PizzaEngine
 
+// MARK: - PizzaListViewModelProtocol
+
+protocol PizzaListViewModelProtocol {
+    var isLoading: Bool { get set }
+    var isApiErrorOccured: Bool { get set }
+    var pizzaViewModels: [PizzaItemCellViewModel] { get set }
+
+    func loadData() -> AnyPublisher<Void, Error>
+    func addPizzaToCart(index: IndexPath)
+    func didSelectItem(at index: Int)
+    func showCartItems()
+}
+
 // MARK: - PizzaListViewModel
 
-class PizzaListViewModel {
+class PizzaListViewModel: PizzaListViewModelProtocol {
     @Published var isLoading: Bool = true
     @Published var isApiErrorOccured: Bool = false
     @Published var pizzaViewModels: [PizzaItemCellViewModel] = []
 
-    private var pizzaBasePrice: Double = 0.0
+    var pizzaBasePrice: Double = 0.0
     private var pizzas: [Pizza] = []
-    private var ingredients: [Ingredient] = []
+    var ingredients: [Ingredient] = []
 
     private let pizzaRepository: PizzaServiceFetchable!
-    private let appCoordinator: AppCoordinator!
-    private let cart: Cart!
+    private let appCoordinator: MainCoordinatable!
+    private let cart: CartProtocol!
 
     init(
         pizzaRepository: PizzaServiceFetchable = PizzaRepository(),
-        appCoordinator: AppCoordinator,
-        cart: Cart
+        appCoordinator: MainCoordinatable,
+        cart: CartProtocol
     ) {
         self.pizzaRepository = pizzaRepository
         self.appCoordinator = appCoordinator
         self.cart = cart
     }
 
-    func loadData() -> AnyPublisher<Void, Never> {
-        Future<Void, Never> { [unowned self] promise in
+    func loadData() -> AnyPublisher<Void, Error> {
+        Future<Void, Error> { [unowned self] promise in
             Task {
                 do {
                     try await self.fetchIngredients()
@@ -46,6 +59,7 @@ class PizzaListViewModel {
                     self.isLoading = false
                     // TODO: check error type and show error message accordingly
                     self.isApiErrorOccured = true
+                    promise(.failure(error))
                 }
             }
         }
@@ -78,6 +92,20 @@ extension PizzaListViewModel {
     func showCartItems() {
         appCoordinator.showCart()
     }
+
+    func ingredientsForPizza(_ pizza: Pizza) -> ([Ingredient], String) {
+        let ingredients = ingredients.filter { pizza.ingredients.contains($0.id) }
+        let ingredientNames = ingredients.map { $0.name }
+        return (ingredients, ingredientNames.joined(separator: ", "))
+    }
+
+    func calculatePrice(_ pizza: Pizza) -> Double {
+        let ingredientPrices = pizza.ingredients.compactMap { ingredientId in
+            ingredients.first { $0.id == ingredientId }?.price
+        }
+        let totalIngredientPrice = ingredientPrices.reduce(0, +)
+        return pizzaBasePrice + totalIngredientPrice
+    }
 }
 
 private extension PizzaListViewModel {
@@ -105,19 +133,5 @@ private extension PizzaListViewModel {
                 price: price
             )
         }
-    }
-
-    func ingredientsForPizza(_ pizza: Pizza) -> ([Ingredient], String) {
-        let ingredients = ingredients.filter { pizza.ingredients.contains($0.id) }
-        let ingredientNames = ingredients.map { $0.name }
-        return (ingredients, ingredientNames.joined(separator: ", "))
-    }
-
-    func calculatePrice(_ pizza: Pizza) -> Double {
-        let ingredientPrices = pizza.ingredients.compactMap { ingredientId in
-            ingredients.first { $0.id == ingredientId }?.price
-        }
-        let totalIngredientPrice = ingredientPrices.reduce(0, +)
-        return pizzaBasePrice + totalIngredientPrice
     }
 }

@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/abin0992/PizzaEngine",
       "state" : {
-        "revision" : "ba75096d3018734e7a70209272d255bf4dd65f46",
-        "version" : "1.0.0"
+        "branch" : "main",
+        "revision" : "223a583adb9a8f88afb0eba099156375547a6250"
       }
     },
     {

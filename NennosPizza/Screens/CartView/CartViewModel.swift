@@ -9,21 +9,31 @@ import Combine
 import Foundation
 import PizzaEngine
 
+// MARK: - CartViewModelProtocol
+
+protocol CartViewModelProtocol {
+    var totalPrice: Double { get }
+    var cartItemsViewModel: [CartCellViewModel] { get }
+
+    func checkOutItems()
+    func showDrinksList()
+}
+
 // MARK: - CartViewModel
 
-class CartViewModel {
+class CartViewModel: CartViewModelProtocol {
     @Published var totalPrice: Double = 0.0
     @Published var cartItemsViewModel: [CartCellViewModel] = []
     @Published var isLoading: Bool = false
     @Published var isOrderPlaced: Bool = false
     @Published var isApiErrorOccured: Bool = false
 
-    private let appCoordinator: AppCoordinator!
+    private let appCoordinator: MainCoordinatable!
     private let cart: Cart!
-    private let checkOutService: CheckOutService = .init()
+    var checkOutService: CheckOutService = .init()
 
     init(
-        appCoordinator: AppCoordinator,
+        appCoordinator: MainCoordinatable,
         cart: Cart
     ) {
         self.cart = cart

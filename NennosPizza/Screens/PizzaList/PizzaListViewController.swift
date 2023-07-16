@@ -48,10 +48,15 @@ private extension PizzaListViewController {
 
         viewModel.loadData()
             .receive(on: DispatchQueue.main)
+            .catch { error -> Just<Void> in
+                // TODO: better error handling
+                return Just<Void>(())
+            }
             .sink { [weak self] _ in
                 self?.pizzaListTableView.reloadData()
             }
             .store(in: &cancellables)
+
 
         viewModel.$isApiErrorOccured
             .filter { $0 == true }
