@@ -13,9 +13,9 @@
 		163EA3F12A611A050028C31A /* DrinksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163EA3F02A611A050028C31A /* DrinksListViewController.swift */; };
 		163EA3F32A611A850028C31A /* DrinkListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163EA3F22A611A850028C31A /* DrinkListViewModel.swift */; };
 		166B750B2A5DD2D600CDAAA5 /* PizzaItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166B750A2A5DD2D600CDAAA5 /* PizzaItemCell.swift */; };
-		167D43682A6259B000B62DA3 /* PizzaEngine in Frameworks */ = {isa = PBXBuildFile; productRef = 167D43672A6259B000B62DA3 /* PizzaEngine */; };
 		167D436A2A62638A00B62DA3 /* UIViewController+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167D43692A62638A00B62DA3 /* UIViewController+ClassName.swift */; };
 		167D436C2A6263C500B62DA3 /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167D436B2A6263C500B62DA3 /* ThankYouViewController.swift */; };
+		167D436F2A63B36900B62DA3 /* PizzaEngine in Frameworks */ = {isa = PBXBuildFile; productRef = 167D436E2A63B36900B62DA3 /* PizzaEngine */; };
 		168025A22A5D28C1001F6CBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168025A12A5D28C1001F6CBB /* AppDelegate.swift */; };
 		168025A42A5D28C1001F6CBB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168025A32A5D28C1001F6CBB /* SceneDelegate.swift */; };
 		168025A92A5D28C1001F6CBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 168025A72A5D28C1001F6CBB /* Main.storyboard */; };
@@ -67,7 +67,6 @@
 		163EA3F02A611A050028C31A /* DrinksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksListViewController.swift; sourceTree = "<group>"; };
 		163EA3F22A611A850028C31A /* DrinkListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkListViewModel.swift; sourceTree = "<group>"; };
 		166B750A2A5DD2D600CDAAA5 /* PizzaItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaItemCell.swift; sourceTree = "<group>"; };
-		167D43662A62598A00B62DA3 /* PizzaEngine */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = PizzaEngine; path = ../../PizzaEngine; sourceTree = "<group>"; };
 		167D43692A62638A00B62DA3 /* UIViewController+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ClassName.swift"; sourceTree = "<group>"; };
 		167D436B2A6263C500B62DA3 /* ThankYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
 		1680259E2A5D28C1001F6CBB /* NennosPizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NennosPizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,7 +107,7 @@
 			files = (
 				161C77B42A5E94E7001EBD8F /* Kingfisher in Frameworks */,
 				16C4039C2A5FC61D006FDB32 /* SwiftEntryKit in Frameworks */,
-				167D43682A6259B000B62DA3 /* PizzaEngine in Frameworks */,
+				167D436F2A63B36900B62DA3 /* PizzaEngine in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +146,28 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		167D43702A63B40400B62DA3 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				168025D62A5D364C001F6CBB /* PizzaList */,
+				16C4038C2A5F2190006FDB32 /* PizzaDetails */,
+				16C4039F2A5FD953006FDB32 /* CartView */,
+				163EA3EF2A6119EE0028C31A /* DrinksList */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		167D43712A63B43500B62DA3 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				168025AC2A5D28C2001F6CBB /* LaunchScreen.storyboard */,
+				168025AF2A5D28C2001F6CBB /* Info.plist */,
+				168025A32A5D28C1001F6CBB /* SceneDelegate.swift */,
+				168025A12A5D28C1001F6CBB /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		168025952A5D28C1001F6CBB = {
 			isa = PBXGroup;
 			children = (
@@ -171,23 +192,14 @@
 		168025A02A5D28C1001F6CBB /* NennosPizza */ = {
 			isa = PBXGroup;
 			children = (
-				167D43662A62598A00B62DA3 /* PizzaEngine */,
-				163EA3EF2A6119EE0028C31A /* DrinksList */,
-				168025A12A5D28C1001F6CBB /* AppDelegate.swift */,
-				168025AA2A5D28C2001F6CBB /* Assets.xcassets */,
+				167D43712A63B43500B62DA3 /* Application */,
 				16C403772A5F1005006FDB32 /* Cart */,
-				16C4039F2A5FD953006FDB32 /* CartView */,
 				16C4037C2A5F1237006FDB32 /* Coordinators */,
 				16C403892A5F1BF0006FDB32 /* Extensions */,
-				168025AF2A5D28C2001F6CBB /* Info.plist */,
-				168025AC2A5D28C2001F6CBB /* LaunchScreen.storyboard */,
-				168025A72A5D28C1001F6CBB /* Main.storyboard */,
-				16C4038C2A5F2190006FDB32 /* PizzaDetails */,
-				168025D62A5D364C001F6CBB /* PizzaList */,
 				16C403812A5F1282006FDB32 /* Protocols */,
 				168025DB2A5DBBC2001F6CBB /* Repository */,
 				168025E62A5DC796001F6CBB /* Resources */,
-				168025A32A5D28C1001F6CBB /* SceneDelegate.swift */,
+				167D43702A63B40400B62DA3 /* Screens */,
 				16C403862A5F17FE006FDB32 /* Utilities */,
 			);
 			path = NennosPizza;
@@ -238,6 +250,8 @@
 		168025E62A5DC796001F6CBB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				168025A72A5D28C1001F6CBB /* Main.storyboard */,
+				168025AA2A5D28C2001F6CBB /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -335,7 +349,7 @@
 			packageProductDependencies = (
 				161C77B32A5E94E7001EBD8F /* Kingfisher */,
 				16C4039B2A5FC61D006FDB32 /* SwiftEntryKit */,
-				167D43672A6259B000B62DA3 /* PizzaEngine */,
+				167D436E2A63B36900B62DA3 /* PizzaEngine */,
 			);
 			productName = NennosPizza;
 			productReference = 1680259E2A5D28C1001F6CBB /* NennosPizza.app */;
@@ -412,6 +426,7 @@
 			packageReferences = (
 				161C77B22A5E94E7001EBD8F /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				16C4039A2A5FC61D006FDB32 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */,
+				167D436D2A63B36900B62DA3 /* XCRemoteSwiftPackageReference "PizzaEngine" */,
 			);
 			productRefGroup = 1680259F2A5D28C1001F6CBB /* Products */;
 			projectDirPath = "";
@@ -659,7 +674,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NennosPizza/Info.plist;
+				INFOPLIST_FILE = NennosPizza/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -685,7 +700,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NennosPizza/Info.plist;
+				INFOPLIST_FILE = NennosPizza/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -825,6 +840,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		167D436D2A63B36900B62DA3 /* XCRemoteSwiftPackageReference "PizzaEngine" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/abin0992/PizzaEngine";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		16C4039A2A5FC61D006FDB32 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/huri000/SwiftEntryKit";
@@ -841,8 +864,9 @@
 			package = 161C77B22A5E94E7001EBD8F /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
-		167D43672A6259B000B62DA3 /* PizzaEngine */ = {
+		167D436E2A63B36900B62DA3 /* PizzaEngine */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 167D436D2A63B36900B62DA3 /* XCRemoteSwiftPackageReference "PizzaEngine" */;
 			productName = PizzaEngine;
 		};
 		16C4039B2A5FC61D006FDB32 /* SwiftEntryKit */ = {

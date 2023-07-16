@@ -8,6 +8,8 @@
 import Combine
 import UIKit
 
+// MARK: - CartViewController
+
 class CartViewController: UIViewController, Storyboardable, Loadable {
 
     @IBOutlet private weak var showDrinksButton: UIBarButtonItem!
@@ -31,15 +33,14 @@ class CartViewController: UIViewController, Storyboardable, Loadable {
     @IBAction func onClickCheckOut(_ sender: Any) {
         viewModel.checkOutItems()
     }
-    
 }
-private extension CartViewController {
 
+private extension CartViewController {
     func setUpNavigationBarButton() {
         showDrinksButton.target = self
         showDrinksButton.action = #selector(showDrinksList)
     }
-    
+
     func setupTableView() {
         cartItemsTableView.dataSource = self
         cartItemsTableView.reloadData()
@@ -54,7 +55,7 @@ private extension CartViewController {
                 self?.updateButtonState()
             }
             .store(in: &cancellables)
-    
+
         viewModel.$cartItemsViewModel
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
@@ -85,7 +86,7 @@ private extension CartViewController {
             .filter { $0 == true }
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
-                self?.showAlertWithRetry() {
+                self?.showAlertWithRetry {
                     self?.viewModel.checkOutItems()
                 }
             }
@@ -94,7 +95,7 @@ private extension CartViewController {
 
     func updateButtonState() {
         checkOutButton.isEnabled = viewModel.totalPrice > 0
-        
+
         if viewModel.totalPrice > 0 {
             checkOutButton.backgroundColor = UIColor(named: PizzaListColors.navigationBarTintColor)
         } else {
@@ -121,16 +122,18 @@ private extension CartViewController {
         showDrinksButton.isHidden = true
     }
 }
-// MARK: - UITableViewDataSource
+
+// MARK: UITableViewDataSource
+
 extension CartViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.cartItemsViewModel.count
+        viewModel.cartItemsViewModel.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CartCell", for: indexPath) as? ItemCell else {
-                return UITableViewCell()
-            }
+            return UITableViewCell()
+        }
         let cellViewModel = viewModel.cartItemsViewModel[indexPath.row]
         cell.configureCartCell(with: cellViewModel)
         return cell
