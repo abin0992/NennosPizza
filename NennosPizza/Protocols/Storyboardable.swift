@@ -28,7 +28,7 @@ extension Storyboardable where Self: UIViewController {
     // MARK: - Properties
 
     static var storyboardName: String {
-        "Main"
+        Storyboards.main
     }
 
     static var storyboardBundle: Bundle {

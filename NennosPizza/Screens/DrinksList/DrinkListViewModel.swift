@@ -9,9 +9,21 @@ import Combine
 import Foundation
 import PizzaEngine
 
+// MARK: - DrinkListViewModelProtocol
+
+protocol DrinkListViewModelProtocol {
+    var isLoading: Bool { get }
+    var error: Error? { get }
+    var drinkViewModels: [DrinkCellViewModel] { get }
+
+    func loadData() -> AnyPublisher<Void, Never>
+    func didSelectItem(at index: Int)
+}
+
+
 // MARK: - DrinkListViewModel
 
-class DrinkListViewModel {
+class DrinkListViewModel: DrinkListViewModelProtocol {
     @Published var isLoading: Bool = true
     @Published var error: Error?
     @Published var drinkViewModels: [DrinkCellViewModel] = []
