@@ -8,7 +8,6 @@
 import UIKit
 
 class Coordinator: NSObject, UINavigationControllerDelegate {
-
     // MARK: - Properties
 
     var didFinish: ((Coordinator) -> Void)?
@@ -47,5 +46,4 @@ class Coordinator: NSObject, UINavigationControllerDelegate {
             childCoordinators.remove(at: index)
         }
     }
-
 }

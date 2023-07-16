@@ -9,13 +9,14 @@ import UIKit
 
 private var containerView: UIView!
 
+// MARK: - Loadable
+
 protocol Loadable {
     func showLoadingView()
     func dismissLoadingView()
 }
 
 extension Loadable where Self: UIViewController {
-
     func showLoadingView() {
         containerView = UIView(frame: view.bounds)
         view.addSubview(containerView)
@@ -25,7 +26,7 @@ extension Loadable where Self: UIViewController {
 
         UIView.animate(withDuration: 0.25) { containerView.alpha = 0.8 }
 
-        let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView(style: .large)
+        let activityIndicator = UIActivityIndicatorView(style: .large)
         containerView.addSubview(activityIndicator)
 
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
@@ -47,7 +48,7 @@ extension Loadable where Self: UIViewController {
 
     func showAlertWithRetry(
         title: String = Alert.errorTitle,
-        message: String = Alert.unknownErrorTitle ,
+        message: String = Alert.unknownErrorTitle,
         retryAction: @escaping () -> Void
     ) {
         let alertController = UIAlertController(
@@ -55,17 +56,16 @@ extension Loadable where Self: UIViewController {
             message: message,
             preferredStyle: .alert
         )
-        
+
         let retryAction = UIAlertAction(
             title: Alert.retryButtonLabel,
             style: .default
         ) { _ in
             retryAction()
         }
-        
+
         alertController.addAction(retryAction)
-        
+
         present(alertController, animated: true, completion: nil)
     }
 }
-

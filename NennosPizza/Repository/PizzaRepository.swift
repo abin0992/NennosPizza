@@ -9,17 +9,20 @@ import Combine
 import Foundation
 import PizzaEngine
 
-protocol PizzaServiceFetchable {
+// MARK: - PizzaServiceFetchable
 
+protocol PizzaServiceFetchable {
     func fetchPizzas() async throws -> PizzasInfo
     func fetchIngredients() async throws -> [Ingredient]
     func fetchDrinks() async throws -> [Drink]
 }
 
-class PizzaRepository: PizzaServiceFetchable {
-    // TODO: The local database fetching should go in here class
+// MARK: - PizzaRepository
 
-    private let pizzaService: PizzaService = PizzaService()
+class PizzaRepository: PizzaServiceFetchable {
+    // TODO: The local database fetching should go in here
+
+    private let pizzaService: PizzaService = .init()
 
     func fetchPizzas() async throws -> PizzasInfo {
         do {
@@ -48,4 +51,3 @@ class PizzaRepository: PizzaServiceFetchable {
         }
     }
 }
-

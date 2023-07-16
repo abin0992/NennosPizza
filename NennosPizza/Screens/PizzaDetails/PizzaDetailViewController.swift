@@ -8,6 +8,8 @@
 import Kingfisher
 import UIKit
 
+// MARK: - PizzaDetailViewController
+
 class PizzaDetailViewController: UIViewController, Storyboardable {
 
     @IBOutlet private weak var pizzaIngredientsTableView: UITableView!
@@ -51,25 +53,24 @@ private extension PizzaDetailViewController {
     }
 
     func configAddToCartButton() {
-        
         let buttonTitleLabel = "ADD TO CART (\(AppConstants.appCurrencySymbol)\(viewModel.pizzaIngredientsViewModel.pizzaViewModel.price))"
         addToCartButton.setTitle(buttonTitleLabel, for: .normal)
     }
 }
 
-// MARK: - UITableViewDataSource
+// MARK: UITableViewDataSource
+
 extension PizzaDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.ingredientsCellViewModel.count
+        viewModel.ingredientsCellViewModel.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientCell", for: indexPath) as? ItemCell else {
-                return UITableViewCell()
-            }
+            return UITableViewCell()
+        }
         let cellViewModel = viewModel.ingredientsCellViewModel[indexPath.row]
         cell.configureIngredientCell(with: cellViewModel)
         return cell
-        
     }
 }

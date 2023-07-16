@@ -9,8 +9,9 @@ import Combine
 import Foundation
 import PizzaEngine
 
-class PizzaListViewModel {
+// MARK: - PizzaListViewModel
 
+class PizzaListViewModel {
     @Published var isLoading: Bool = true
     @Published var isApiErrorOccured: Bool = false
     @Published var pizzaViewModels: [PizzaItemCellViewModel] = []
@@ -34,7 +35,7 @@ class PizzaListViewModel {
     }
 
     func loadData() -> AnyPublisher<Void, Never> {
-        return Future<Void, Never> { [unowned self] promise in
+        Future<Void, Never> { [unowned self] promise in
             Task {
                 do {
                     try await self.fetchIngredients()
@@ -63,8 +64,8 @@ class PizzaListViewModel {
 }
 
 // MARK: navigation
-extension PizzaListViewModel {
 
+extension PizzaListViewModel {
     func didSelectItem(at index: Int) {
         let selectedItem = pizzaViewModels[index]
         let pizzaIngredientsViewModel = PizzaIngredientsViewModel(
@@ -80,7 +81,6 @@ extension PizzaListViewModel {
 }
 
 private extension PizzaListViewModel {
-
     func fetchIngredients() async throws {
         ingredients = try await pizzaRepository.fetchIngredients()
     }
@@ -91,7 +91,8 @@ private extension PizzaListViewModel {
         pizzas = pizzasInfo.pizzas
     }
 
-    //MARK: Pizza cell viewmodels
+    // MARK: Pizza cell viewmodels
+
     func calculatePizzaViewModels() {
         isLoading = false
         pizzaViewModels = pizzas.map { pizza in
@@ -107,14 +108,14 @@ private extension PizzaListViewModel {
     }
 
     func ingredientsForPizza(_ pizza: Pizza) -> ([Ingredient], String) {
-        let ingredients = self.ingredients.filter { pizza.ingredients.contains($0.id) }
+        let ingredients = ingredients.filter { pizza.ingredients.contains($0.id) }
         let ingredientNames = ingredients.map { $0.name }
         return (ingredients, ingredientNames.joined(separator: ", "))
     }
 
     func calculatePrice(_ pizza: Pizza) -> Double {
         let ingredientPrices = pizza.ingredients.compactMap { ingredientId in
-            return ingredients.first { $0.id == ingredientId }?.price
+            ingredients.first { $0.id == ingredientId }?.price
         }
         let totalIngredientPrice = ingredientPrices.reduce(0, +)
         return pizzaBasePrice + totalIngredientPrice

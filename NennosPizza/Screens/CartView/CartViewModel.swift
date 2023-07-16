@@ -9,17 +9,18 @@ import Combine
 import Foundation
 import PizzaEngine
 
-class CartViewModel {
+// MARK: - CartViewModel
 
+class CartViewModel {
     @Published var totalPrice: Double = 0.0
     @Published var cartItemsViewModel: [CartCellViewModel] = []
     @Published var isLoading: Bool = false
     @Published var isOrderPlaced: Bool = false
     @Published var isApiErrorOccured: Bool = false
-    
+
     private let appCoordinator: AppCoordinator!
     private let cart: Cart!
-    private let checkOutService: CheckOutService = CheckOutService()
+    private let checkOutService: CheckOutService = .init()
 
     init(
         appCoordinator: AppCoordinator,
@@ -32,8 +33,8 @@ class CartViewModel {
 }
 
 // MARK: Checkout service
-extension CartViewModel {
 
+extension CartViewModel {
     func checkOutItems() {
         isLoading = true
         let checkoutItems = createCheckOutItems()
@@ -46,7 +47,7 @@ extension CartViewModel {
                 cart.clearCartItems()
             } catch {
                 isLoading = false
-                // TODO: check error type and show error message accordingly 
+                // TODO: check error type and show error message accordingly
                 isApiErrorOccured = true
             }
         }
@@ -54,6 +55,7 @@ extension CartViewModel {
 }
 
 // MARK: Navigation
+
 extension CartViewModel {
     func showDrinksList() {
         appCoordinator.showDrinksList()
@@ -64,11 +66,13 @@ private extension CartViewModel {
     func bindViewModel() {
         cart.$cartItems
             .map { [weak self] cartItems -> [CartCellViewModel] in
-                guard let self else { return [] }
+                guard let self else {
+                    return []
+                }
                 return self.createCartCellViewModels(cartItems: cartItems)
             }
             .assign(to: &$cartItemsViewModel)
-        
+
         cart.$cartItems
             .map { cartItems -> Double in
                 cartItems.reduce(0) { $0 + $1.price }
@@ -78,10 +82,10 @@ private extension CartViewModel {
 
     func createCartCellViewModels(cartItems: [CartItem]) -> [CartCellViewModel] {
         var viewModels: [CartCellViewModel] = []
-        
+
         for item in cartItems {
             var title: String
-            
+
             if let pizzaItem = item as? PizzaCartItem {
                 title = pizzaItem.pizza.name
             } else if let drinkItem = item as? DrinkCartItem {
@@ -89,12 +93,12 @@ private extension CartViewModel {
             } else {
                 continue
             }
-            
+
             let price = String(item.price)
             let viewModel = CartCellViewModel(title: title, price: price)
             viewModels.append(viewModel)
         }
-        
+
         return viewModels
     }
 

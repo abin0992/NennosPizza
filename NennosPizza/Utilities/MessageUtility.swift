@@ -5,8 +5,8 @@
 //  Created by Abin Baby on 13.07.23.
 //
 
-import UIKit
 import SwiftEntryKit
+import UIKit
 
 class MessageUtility {
     static func showAddedToCartMessage() {

@@ -5,18 +5,19 @@
 //  Created by Abin Baby on 11.07.23.
 //
 
-import UIKit
 import Kingfisher
 import PizzaEngine
+import UIKit
+
+// MARK: - PizzaItemCell
 
 class PizzaItemCell: UITableViewCell {
-
     @IBOutlet private weak var pizzaImageView: UIImageView!
     @IBOutlet private weak var pizzaNameLabel: UILabel!
     @IBOutlet private weak var pizzaIngredientsLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var addToCartButton: UIButton!
-    
+
     weak var delegate: PizzaItemCellDelegate?
 
     func configure(with viewModel: PizzaItemCellViewModel) {
@@ -44,6 +45,8 @@ class PizzaItemCell: UITableViewCell {
         delegate?.addToCartButtonTapped(in: self)
     }
 }
+
+// MARK: - PizzaItemCellDelegate
 
 protocol PizzaItemCellDelegate: AnyObject {
     func addToCartButtonTapped(in cell: PizzaItemCell)

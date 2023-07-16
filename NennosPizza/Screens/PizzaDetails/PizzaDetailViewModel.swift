@@ -9,8 +9,9 @@ import Combine
 import Foundation
 import PizzaEngine
 
+// MARK: - PizzaDetailViewModel
+
 class PizzaDetailViewModel {
-    
     lazy var ingredientsCellViewModel = createIngredientCellViewModels()
     lazy var pizzaName = pizzaIngredientsViewModel.pizzaViewModel.pizza.name.uppercased()
 
@@ -36,22 +37,21 @@ class PizzaDetailViewModel {
 }
 
 private extension PizzaDetailViewModel {
-    
     func createIngredientCellViewModels() -> [IngredientCellViewModel] {
         let pizzaIngredients = Set(pizzaIngredientsViewModel.pizzaViewModel.pizza.ingredients)
-        
+
         let ingredientCellViewModels = pizzaIngredientsViewModel.allIngredients.map { ingredient in
             let isIngredientAdded = pizzaIngredients.contains(ingredient.id)
             let title = ingredient.name
             let price = "\(AppConstants.appCurrencySymbol)\(ingredient.price)"
-            
+
             return IngredientCellViewModel(
                 title: title,
                 price: price,
                 isIngredientAdded: isIngredientAdded
             )
         }
-        
+
         return ingredientCellViewModels
     }
 }

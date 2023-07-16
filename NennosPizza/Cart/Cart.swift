@@ -8,24 +8,28 @@
 import Combine
 import Foundation
 
+// MARK: - CartProtocol
+
 protocol CartProtocol {
     var items: [CartItem] { get }
     var totalPrice: Double { get }
-    
+
     func addItem(_ item: CartItem)
     func removeItem(_ item: CartItem)
     func clearCartItems()
 }
 
+// MARK: - Cart
+
 class Cart: CartProtocol {
     @Published private(set) var cartItems: [CartItem] = []
 
     var items: [CartItem] {
-        return cartItems
+        cartItems
     }
 
     var totalPrice: Double {
-        return cartItems.reduce(0) { $0 + $1.price }
+        cartItems.reduce(0) { $0 + $1.price }
     }
 
     func addItem(_ item: CartItem) {
@@ -37,6 +41,6 @@ class Cart: CartProtocol {
     }
 
     func clearCartItems() {
-            cartItems.removeAll()
-        }
+        cartItems.removeAll()
+    }
 }

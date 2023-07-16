@@ -8,6 +8,8 @@
 import Combine
 import UIKit
 
+// MARK: - PizzaListViewController
+
 class PizzaListViewController: UIViewController, Storyboardable, Loadable {
 
     @IBOutlet private weak var pizzaListTableView: UITableView!
@@ -16,7 +18,7 @@ class PizzaListViewController: UIViewController, Storyboardable, Loadable {
 
     var viewModel: PizzaListViewModel!
     private var cancellables = Set<AnyCancellable>()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,16 +26,14 @@ class PizzaListViewController: UIViewController, Storyboardable, Loadable {
         bindViewModel()
         setNavigationBarButtons()
     }
-    
 }
 
 private extension PizzaListViewController {
-
     func setupTableView() {
         pizzaListTableView.dataSource = self
         pizzaListTableView.delegate = self
     }
-    
+
     func bindViewModel() {
         viewModel.$isLoading
             .receive(on: DispatchQueue.main)
@@ -57,7 +57,7 @@ private extension PizzaListViewController {
             .filter { $0 == true }
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
-                self?.showAlertWithRetry() {
+                self?.showAlertWithRetry {
                     _ = self?.viewModel.loadData()
                 }
             }
@@ -76,17 +76,17 @@ private extension PizzaListViewController {
     }
 }
 
-// MARK: - UITableViewDataSource
-extension PizzaListViewController: UITableViewDataSource {
+// MARK: UITableViewDataSource
 
+extension PizzaListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.pizzaViewModels.count
+        viewModel.pizzaViewModels.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PizzaItemCell", for: indexPath) as? PizzaItemCell else {
-                return UITableViewCell()
-            }
+            return UITableViewCell()
+        }
         let cellViewModel = viewModel.pizzaViewModels[indexPath.row]
         cell.configure(with: cellViewModel)
         cell.delegate = self
@@ -94,14 +94,15 @@ extension PizzaListViewController: UITableViewDataSource {
     }
 }
 
-// MARK: - UITableViewDelegate
+// MARK: UITableViewDelegate
+
 extension PizzaListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.didSelectItem(at: indexPath.row)
     }
 }
 
-// MARK: -
+// MARK: PizzaItemCellDelegate
 
 extension PizzaListViewController: PizzaItemCellDelegate {
     func addToCartButtonTapped(in cell: PizzaItemCell) {

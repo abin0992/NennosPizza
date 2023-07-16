@@ -7,8 +7,9 @@
 
 import UIKit
 
-protocol Storyboardable {
+// MARK: - Storyboardable
 
+protocol Storyboardable {
     // MARK: - Properties
 
     static var storyboardName: String { get }
@@ -21,11 +22,9 @@ protocol Storyboardable {
     // MARK: - Methods
 
     static func instantiate() -> Self
-
 }
 
 extension Storyboardable where Self: UIViewController {
-
     // MARK: - Properties
 
     static var storyboardName: String {
@@ -48,12 +47,11 @@ extension Storyboardable where Self: UIViewController {
         guard let viewController = UIStoryboard(
             name: storyboardName,
             bundle: storyboardBundle).instantiateViewController(
-                withIdentifier: storyboardIdentifier) as? Self else {
+            withIdentifier: storyboardIdentifier) as? Self
+        else {
             fatalError("Unable to Instantiate View Controller With Storyboard Identifier \(storyboardIdentifier)")
         }
 
         return viewController
     }
-
 }
-

@@ -9,8 +9,9 @@ import Combine
 import Foundation
 import PizzaEngine
 
-class DrinkListViewModel {
+// MARK: - DrinkListViewModel
 
+class DrinkListViewModel {
     @Published var isLoading: Bool = true
     @Published var error: Error?
     @Published var drinkViewModels: [DrinkCellViewModel] = []
@@ -29,7 +30,7 @@ class DrinkListViewModel {
 
     func loadData() -> AnyPublisher<Void, Never> {
         // TODO: Add cache for drinks array or cache JSON response
-        return Future<Void, Never> { [unowned self] promise in
+        Future<Void, Never> { [unowned self] promise in
             Task {
                 do {
                     try await self.fetchDrinks()
@@ -45,8 +46,8 @@ class DrinkListViewModel {
 }
 
 // MARK: navigation
-extension DrinkListViewModel {
 
+extension DrinkListViewModel {
     func didSelectItem(at index: Int) {
         let selectedItem = drinks[index]
         let drinkItem = DrinkCartItem(
@@ -59,12 +60,13 @@ extension DrinkListViewModel {
 }
 
 private extension DrinkListViewModel {
-    //MARK: Drink cell viewmodels
+    // MARK: Drink cell viewmodels
+
     func fetchDrinks() async throws {
         drinks = try await pizzaRepository.fetchDrinks()
         isLoading = false
         drinkViewModels = drinks.map { drink in
-            return DrinkCellViewModel(
+            DrinkCellViewModel(
                 title: drink.name,
                 price: String(drink.price)
             )

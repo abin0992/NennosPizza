@@ -8,9 +8,10 @@
 import Combine
 import UIKit
 
-class DrinksListViewController: UIViewController, Storyboardable, Loadable {
+// MARK: - DrinksListViewController
 
-    @IBOutlet private weak var drinksTableView: UITableView!
+class DrinksListViewController: UIViewController, Storyboardable, Loadable {
+    @IBOutlet private var drinksTableView: UITableView!
 
     var viewModel: DrinkListViewModel!
     private var cancellables = Set<AnyCancellable>()
@@ -23,22 +24,24 @@ class DrinksListViewController: UIViewController, Storyboardable, Loadable {
     }
 }
 
-// MARK: - UITableViewDataSource
+// MARK: UITableViewDataSource
 
 extension DrinksListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.drinkViewModels.count
+        viewModel.drinkViewModels.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DrinkCell", for: indexPath) as? ItemCell else {
-                return UITableViewCell()
-            }
+            return UITableViewCell()
+        }
         let cellViewModel = viewModel.drinkViewModels[indexPath.row]
         cell.configureDrinkCell(with: cellViewModel)
         return cell
     }
 }
+
+// MARK: UITableViewDelegate
 
 extension DrinksListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -51,7 +54,7 @@ private extension DrinksListViewController {
         drinksTableView.dataSource = self
         drinksTableView.delegate = self
     }
-    
+
     func bindViewModel() {
         viewModel.$isLoading
             .receive(on: DispatchQueue.main)

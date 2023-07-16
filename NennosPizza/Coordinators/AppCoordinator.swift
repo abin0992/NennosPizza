@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+// MARK: - MainCoordinatable
+
 protocol MainCoordinatable {
     func showPizzaList()
     func showPizzaDetails(pizzaViewModel: PizzaIngredientsViewModel)
@@ -15,11 +17,12 @@ protocol MainCoordinatable {
     func showDrinksList()
 }
 
-class AppCoordinator: Coordinator {
+// MARK: - AppCoordinator
 
+class AppCoordinator: Coordinator {
     // MARK: - Properties
 
-    private var navigationController: UINavigationController = UINavigationController()
+    private var navigationController: UINavigationController = .init()
     private var presentingViewController: UIViewController?
 
     // MARK: - Public API
@@ -38,42 +41,44 @@ class AppCoordinator: Coordinator {
     }
 }
 
-extension AppCoordinator: MainCoordinatable {
+// MARK: MainCoordinatable
 
+extension AppCoordinator: MainCoordinatable {
     func showPizzaList() {
-        let pizzaListViewController: PizzaListViewController = PizzaListViewController.instantiate()
+        let pizzaListViewController = PizzaListViewController.instantiate()
         let pizzaListViewModel = PizzaListViewModel(
             appCoordinator: self,
-            cart: self.cart
+            cart: cart
         )
         pizzaListViewController.viewModel = pizzaListViewModel
         navigationController.pushViewController(pizzaListViewController, animated: true)
     }
 
     func showPizzaDetails(pizzaViewModel: PizzaIngredientsViewModel) {
-        let pizzaDetailViewController: PizzaDetailViewController = PizzaDetailViewController.instantiate()
+        let pizzaDetailViewController = PizzaDetailViewController.instantiate()
         let pizzaDetailViewModel = PizzaDetailViewModel(
             pizzaIngredientsViewModel: pizzaViewModel,
-            cart: self.cart)
+            cart: cart
+        )
         pizzaDetailViewController.viewModel = pizzaDetailViewModel
-        
+
         navigationController.pushViewController(pizzaDetailViewController, animated: true)
     }
 
     func showCart() {
-        let cartViewController: CartViewController = CartViewController.instantiate()
+        let cartViewController = CartViewController.instantiate()
         let cartViewModel = CartViewModel(
             appCoordinator: self,
-            cart: self.cart
+            cart: cart
         )
         cartViewController.viewModel = cartViewModel
-        
+
         navigationController.pushViewController(cartViewController, animated: true)
     }
 
     func showDrinksList() {
-        let drinksViewController: DrinksListViewController = DrinksListViewController.instantiate()
-        let drinksListViewModel = DrinkListViewModel(cart: self.cart)
+        let drinksViewController = DrinksListViewController.instantiate()
+        let drinksListViewModel = DrinkListViewModel(cart: cart)
         drinksViewController.viewModel = drinksListViewModel
         navigationController.pushViewController(drinksViewController, animated: true)
     }
