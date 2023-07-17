@@ -86,7 +86,7 @@ class PizzaListViewModelTests: XCTestCase {
         
         // When
         let expectation = self.expectation(description: "Loading data")
-        let cancellable = subjectUnderTest.loadData()
+        let _ = subjectUnderTest.loadData()
             .sink(receiveCompletion: { completion in
                 if case .finished = completion {
                     completionCalled = true
@@ -111,7 +111,7 @@ class PizzaListViewModelTests: XCTestCase {
 
         // When
         let expectation = self.expectation(description: "Loading data")
-        let cancellable = subjectUnderTest.loadData()
+        let _ = subjectUnderTest.loadData()
             .sink(receiveCompletion: { completion in
                 if case .failure = completion {
                     completionCalled = true

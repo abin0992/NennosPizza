@@ -124,8 +124,8 @@ class PizzaDetailViewModelTests: XCTestCase {
 
     func test_IngredientsCellViewModels() {
         // Create a mock pizza with ingredients
-        let pizza = testPizza
-        let pizzaViewModel = testPizzaItemCellViewModel
+        // testPizza
+        // testPizzaItemCellViewModel
 
 
         // Assign the pizzaViewModel to the pizzaIngredientsViewModel

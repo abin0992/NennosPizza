@@ -87,8 +87,11 @@ extension AppCoordinator: MainCoordinatable {
 private extension AppCoordinator {
     func setUpNavigationBar() {
         navigationController.navigationBar.tintColor = UIColor(named: PizzaListColors.navigationBarTintColor)
+        guard let navigationBarTintColor = UIColor(named: PizzaListColors.navigationBarTintColor) else {
+            return
+        }
         let titleAttributes: [NSAttributedString.Key: Any] = [
-            .foregroundColor: UIColor(named: PizzaListColors.navigationBarTintColor),
+            .foregroundColor: navigationBarTintColor,
             .font: UIFont.systemFont(ofSize: 17, weight: .heavy)
         ]
         navigationController.navigationBar.titleTextAttributes = titleAttributes
