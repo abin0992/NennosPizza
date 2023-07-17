@@ -18,7 +18,7 @@ The project comes ready to test.
 Clone and run on your machine. No additional steps required.
 
   ```bash
-  git clone [https://github.com/abin0992/GHFollowers.git](https://github.com/abin0992/NennosPizza.git)
+  git clone https://github.com/abin0992/NennosPizza.git
   ```
   #### Dependencies 
   1. [Pizza Engine](https://github.com/abin0992/PizzaEngine/) - the core of app, (internal dependency)
