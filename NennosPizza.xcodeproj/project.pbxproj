@@ -795,8 +795,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/abin0992/PizzaEngine";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 		16C4039A2A5FC61D006FDB32 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */ = {
